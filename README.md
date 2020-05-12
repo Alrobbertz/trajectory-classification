@@ -23,7 +23,7 @@ Each driver's day trajectory consists of a sequence of readings including:
 * **Time**: Timestamp of the record.
 * **Status**: 1 means taxi is occupied and 0 means a vacant taxi.
 
-### Reinforment Learning Setup
+## Reinforment Learning Setup
 
 This portion of the project utilized a trajectory dataset with **six months of driver's daily trajectories for 5 drivers**. This was a substantial amount of data for each driver, enough to use standard learning models. 
 
@@ -34,7 +34,7 @@ This portion of the project tested two model setups:
 * Ensemble Model, containing two LSTM branches and one feed-forwad branch. All branches are concattenated and fed into a feed-forward intepretation model. 
 
 
-### Few-Shot Learning Setup
+## Few-Shot Learning Setup
 
 This portion of the project utilized a trajectory dataset with **five days of driver's trajectories for 500 drivers**. Becuase of the dataset composition, standard learning models could not be used. Therefore, we implemented a meta-learning / few-shot learning methodology to classify taxi plate numbers. 
 
