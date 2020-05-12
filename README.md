@@ -23,7 +23,7 @@ Each driver's day trajectory consists of a sequence of readings including:
 * **Time**: Timestamp of the record.
 * **Status**: 1 means taxi is occupied and 0 means a vacant taxi.
 
-## Reinforment Learning Setup
+## Reinforcement Learning Setup
 
 This portion of the project utilized a trajectory dataset with **six months of driver's daily trajectories for 5 drivers**. This was a substantial amount of data for each driver, enough to use standard learning models. 
 
