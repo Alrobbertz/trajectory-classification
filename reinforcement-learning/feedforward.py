@@ -1,13 +1,8 @@
 import pickle
 import numpy as np
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
-from tensorflow.keras.layers import Input
-from tensorflow.keras.layers import Dropout
-from tensorflow.keras.callbacks import TensorBoard
-from tensorflow.keras.callbacks import EarlyStopping
-from tensorflow.keras.callbacks import ModelCheckpoint
-from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.layers import Input, Dense, Dropout
+from tensorflow.keras.callbacks import TensorBoard, EarlyStopping, ModelCheckpoint
 from tensorflow.keras.utils import to_categorical, plot_model
 from tensorflow import convert_to_tensor
 
@@ -16,10 +11,11 @@ np.random.seed(7)
 
 # Set Training Parameters
 validation_split = 0.1
-
 batch_size = 64
-steps_per_epoch = 1
-epochs = 300
+steps_per_epoch = 10
+epochs = 20
+
+
 
 # Load and Process the Training Data
 x_train, y_train = pickle.load(open('train_data_ff.pkl', 'rb'))
@@ -43,7 +39,7 @@ model.add(Dense(units=5, activation='softmax'))
 # summarize layers
 print(model.summary())
 # plot graph
-plot_model(model, to_file='multiple_inputs.png', show_shapes=True)
+plot_model(model, to_file='feedforward.png', show_shapes=True)
 
 # Compile the Model
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
@@ -68,3 +64,7 @@ model.fit(x_train, y_train, validation_split=validation_split,
                     verbose=1, callbacks=[tensor_board, es, mc])
 
 print('Training took {} seconds'.format(time.time() - start_time))
+
+# Save the Model
+model.save('model.h5')
+print('Saved Model to file')

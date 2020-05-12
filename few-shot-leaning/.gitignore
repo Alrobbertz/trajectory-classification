@@ -3,13 +3,14 @@
 /.ipynb_checkpoints
 /.vscode
 /data
-/data_5drivers
 /logs
+/logs2
+/models
 
 *.zip
 *.docx
 *.txt
-*.png
+*.pdf
 
 *.pkl
 *.h5
