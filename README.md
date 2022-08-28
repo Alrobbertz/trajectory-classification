@@ -2,7 +2,7 @@
 
 ## Summary ##
 
-This project includes two septerate tasks for trajectory classification. This first uses a standard reinforcement learning model/training setup to identify taxi plate numbers using a single-day's trajectory for a given driver. The second part of this project achieves the same task using a Siamese network for few-shot learning.
+This project includes two septerate tasks for trajectory classification. This first uses a standard supervised learning model/training setup to identify taxi plate numbers using a single-day's trajectory for a given driver. The second part of this project achieves the same task using a Siamese network for few-shot learning.
 
 ## Dataset Description
 
@@ -23,7 +23,7 @@ Each driver's day trajectory consists of a sequence of readings including:
 * **Time**: Timestamp of the record.
 * **Status**: 1 means taxi is occupied and 0 means a vacant taxi.
 
-## Reinforcement Learning Setup
+## Traditional/Supervised Learning Setup
 
 This portion of the project utilized a trajectory dataset with **six months of driver's daily trajectories for 5 drivers**. This was a substantial amount of data for each driver, enough to use standard learning models. 
 
